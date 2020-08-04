@@ -16,11 +16,11 @@ slug.addEventListener("keyup", function (e) {
         inpBtn.disabled = false;
         slug.style.borderColor = "green";
     }
-    display.value = `http://localhost:3000/${slug.value}`;
+    display.value = `https://sheltered-thicket-25083.herokuapp.com//${slug.value}`;
 });
 slug.addEventListener("blur", function () {
     if (slug.value !== "" && slug.value.match(re)) {
-        fetch(`http://localhost:3000/api/check/${slug.value}`)
+        fetch(`https://sheltered-thicket-25083.herokuapp.com//api/check/${slug.value}`)
             .then(data => data.json())
             .then(data => checkResponse(data))
             .catch(err => console.error("API Error" + err));
