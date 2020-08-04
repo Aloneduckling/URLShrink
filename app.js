@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-
-mongoose.connect("mongodb://localhost/red", {
+mongoose.connect(process.env.DATABASEURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
     useCreateIndex: true
-});
+}).then(()=>{
+    console.log("connected to DB");
+}).catch(err => console.log("ERROR(DB): " + err));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
