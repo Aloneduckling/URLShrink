@@ -1,0 +1,24 @@
+<%- include("./partials/header") %> 
+
+<table class="table mt-5">
+    <thead class="bg-success">
+        <tr>
+            <th scope="col"># </th>
+            <th scope="col">Slug</th>
+            <th scope="col">Destination</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+       <%    data.forEach(function(item, index){%>
+           <tr>
+               <th scope="row"><%= index+1 %> </th>
+               <td><%= item.slug %> </td>
+               <td><%= item.destination %> </td>
+               <td><a href="http://localhost:3000/<%= item.slug %>" target="_blank">[]-></a></td>
+           </tr>
+       <%  });%> 
+    </tbody>
+</table>
+
+<%- include("./partials/footer") %> 
