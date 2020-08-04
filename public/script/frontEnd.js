@@ -5,7 +5,6 @@ const slug = document.getElementById("slug"),
 
 let re = /^([A-Za-z0-9]_?-?){1,9}$/;
 
-console.log("before event listener");
 slug.addEventListener("keyup", function (e) {
     if (!slug.value.match(re)) {
         //the input is wrong show the message and disable all further inputs and buttons
@@ -20,14 +19,11 @@ slug.addEventListener("keyup", function (e) {
     display.value = `http://localhost:3000/${slug.value}`;
 });
 slug.addEventListener("blur", function () {
-    console.log("blur event");
     if (slug.value !== "" && slug.value.match(re)) {
-        console.log("fetch");
         fetch(`http://localhost:3000/api/check/${slug.value}`)
             .then(data => data.json())
-            .then(console.log("inside fetch"))
             .then(data => checkResponse(data))
-            .catch(err => console.log("API Error" + err));
+            .catch(err => console.error("API Error" + err));
     }
 });
 

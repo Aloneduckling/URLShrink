@@ -36,7 +36,7 @@ app.get("/", (req, res) => {
 app.get("/urls/show", (req,res) => {
     Redirect.find({}, function(err, allData){
         if(err){
-            console.log(err);
+            console.error();(err);
             // res.render("err", {err: err});
             res.redirect("/");
         }else {
@@ -52,17 +52,13 @@ app.post("/generate", (req, res) => {
     }, function (err, data) {
         //if database error
         if (err) {
-            console.log("ERROR: " + err);
+            console.error("ERROR: " + err);
         }
         //if no data found then process ok 
         else if (!data) {
             Redirect.create(req.body.redirect, function (err, data) {
                 if (err) {
-                    console.log(err);
-                } else {
-                    //check if the data exist or not 
-
-                    console.log("success data transfered\n" + data);
+                    console.error(err);
                 }
             });
             res.redirect("/");
@@ -82,19 +78,15 @@ app.get("/api/check/:slug", (req, res) => {
     checkDuplicate(req, res);
 });
 
-app.listen(3000, () => {
-    console.log("server Started");
-});
+app.listen(process.env.PORT, process.env.IP);
 
 function redirectTo(req, res) {
     const slug_url = req.params.slug;
-    console.log(slug_url);
-
     Redirect.findOne({
         slug: slug_url
     }, function (err, data) {
         if (err || !data) {
-            console.log("ERROR(non API): " + err);
+            console.error("ERROR(non API): " + err);
             res.redirect("/");
         } else {
             const i = data.destination.search("://");
