@@ -59,9 +59,13 @@ app.post("/generate", (req, res) => {
             Redirect.create(req.body.redirect, function (err, data) {
                 if (err) {
                     console.error(err);
+                }else {
+                    res.render("success", {
+                        shortURL: data
+                    });
+
                 }
             });
-            res.redirect("/");
         } else {
 
             res.send("Slug already in use, please choose a different one");

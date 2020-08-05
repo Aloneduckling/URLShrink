@@ -1,0 +1,15 @@
+<%- include("./partials/header") %>
+
+<div class="container successContainer">
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Awesome!</h4>
+        <p>The short Link is generated. You can share the generated link, find it below. Just Copy, Paste, Send</p>
+        <hr>
+        <p class="mb-0">
+            https://sheltered-thicket-25083.herokuapp.com/<%= shortURL.slug %>
+            <a href="https://sheltered-thicket-25083.herokuapp.com/<%= shortURL.slug %>">[]-></a>
+        </p>
+    </div>
+</div>
+
+<%- include("./partials/footer") %>
