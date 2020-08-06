@@ -1,7 +1,17 @@
-.card,
-.successContainer {
+.card {
     padding: 30px;
-    margin-top: 50vh;
-    transform: translate(0, -80%);
+    margin-top: -4vh;
 
+}
+
+.successContainer {
+    padding: 0px;
+    margin-top: 15vh;
+}
+
+#footer {
+    padding-bottom: 2vh;
+    margin-top: 5vh;
+    color: #f7f7f7;
+    text-align: center;
 }

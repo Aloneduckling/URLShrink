@@ -79,4 +79,3 @@ function checkResponse(data) {
         inpBtn.disabled = true;
     }
 }
-
