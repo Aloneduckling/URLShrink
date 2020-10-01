@@ -15,7 +15,7 @@ https://nodejs.org/en/
     
     cd URLShrink
     
-    node app,js
+    node app.js
 
 
 Dependencies ==>
