@@ -1,6 +1,13 @@
-> URL Shortner ==>
+# URL Shortner ==>
 
-This app shortens large URLs to small ones. 
+This app shortens large URLs to small easy to use and rememberable ones. 
+
+###Install NodeJS==>
+
+https://nodejs.org/en/
+
+    
+###Run    npm install
 
 
 Dependencies ==>
@@ -16,5 +23,7 @@ Dependencies ==>
     
 Local environment setup ==>
     Database: MongoBD 
+
+
     Server: Express server(localhost:3000)
     
