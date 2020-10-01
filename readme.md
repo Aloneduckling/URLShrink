@@ -1,13 +1,21 @@
 # URL Shortner ==>
 
-This app shortens large URLs to small easy to use and rememberable ones. 
+This app shortens large URLs to small easy to use and rememberable ones.
+--------------------------------------------------------------------
+## link to the website ==>
+        https://sheltered-thicket-25083.herokuapp.com/
 
-###Install NodeJS==>
+### Install NodeJS==>
 
 https://nodejs.org/en/
 
     
-###Run    npm install
+### Run    
+    npm install
+    
+    cd URLShrink
+    
+    node app,js
 
 
 Dependencies ==>
@@ -22,8 +30,8 @@ Dependencies ==>
     
     
 Local environment setup ==>
-    Database: MongoBD 
 
+    Database: MongoBD 
 
     Server: Express server(localhost:3000)
     
